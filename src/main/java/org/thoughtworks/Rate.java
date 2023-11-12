@@ -10,4 +10,9 @@ public class Rate {
         this.unit= unit;
     }
 
+    double convertTo(WeightType targetUnit)
+    {
+        return value/(unit.convert(1,targetUnit));
+    }
+
 }

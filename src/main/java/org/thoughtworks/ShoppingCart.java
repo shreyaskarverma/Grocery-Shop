@@ -16,6 +16,10 @@ public class ShoppingCart {
         itemList.put(item,quantity);
     }
 
+    public Map<GroceryItem,Quantity> getItems() {
+        return itemList;
+    }
+
     public boolean contains(GroceryItem item)
     {
         return itemList.containsKey(item);

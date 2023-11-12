@@ -12,6 +12,11 @@ public class GroceryItem {
         this.type=type;
     }
 
+    public double getCost(Quantity quantity)
+    {
+        return rate.convertTo(WeightType.GM) * quantity.convertTo(WeightType.GM) ;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

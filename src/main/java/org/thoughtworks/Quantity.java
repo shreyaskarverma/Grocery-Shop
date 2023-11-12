@@ -10,4 +10,9 @@ public class Quantity {
         this.value=value;
     }
 
+    double convertTo(WeightType targetType)
+    {
+        return type.convert(value,targetType);
+    }
+
 }
