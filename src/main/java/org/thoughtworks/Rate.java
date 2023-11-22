@@ -1,18 +1,19 @@
 package org.thoughtworks;
 
 public class Rate {
-    double value;
-    WeightType unit;
+    private final Cost cost;
+    private final Quantity quantity;
 
-    Rate(double value, WeightType unit)
+    Rate(Cost cost, Quantity quantity)
     {
-        this.value=value;
-        this.unit= unit;
+        this.cost=cost;
+        this.quantity = quantity;
     }
 
-    double convertTo(WeightType targetUnit)
+    public Cost convert(Quantity newQuantity)
     {
-        return value/(unit.convert(1,targetUnit));
+        double quantityFactor= newQuantity.convertTo(WeightType.GM)/ this.quantity.convertTo(WeightType.GM);
+        return cost.multiply(quantityFactor);
     }
 
 }

@@ -3,18 +3,13 @@ package org.thoughtworks;
 import java.util.Objects;
 
 public class GroceryItem {
-    Rate rate;
     GroceryItemType type;
+    String color;
 
-    GroceryItem(Rate rate, GroceryItemType type)
+    GroceryItem(GroceryItemType type,String color)
     {
-        this.rate=rate;
         this.type=type;
-    }
-
-    public double getCost(Quantity quantity)
-    {
-        return rate.convertTo(WeightType.GM) * quantity.convertTo(WeightType.GM) ;
+        this.color=color;
     }
 
     @Override
@@ -27,6 +22,6 @@ public class GroceryItem {
 
     @Override
     public int hashCode() {
-        return Objects.hash(rate, type);
+        return Objects.hash(type);
     }
 }

@@ -1,8 +1,8 @@
 package org.thoughtworks;
 
 public class Quantity {
-    double value;
-    WeightType type;
+    private final double value;
+    private final WeightType type;
 
     Quantity(double value,WeightType type)
     {
@@ -10,7 +10,7 @@ public class Quantity {
         this.value=value;
     }
 
-    double convertTo(WeightType targetType)
+    public double convertTo(WeightType targetType)
     {
         return type.convert(value,targetType);
     }

@@ -6,6 +6,6 @@ public enum GroceryItemType {
     APPLE,
     KIWI,
     SALT,
-    RICE;
+    RICE
 
 }

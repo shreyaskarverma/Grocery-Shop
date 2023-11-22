@@ -5,18 +5,14 @@ import java.util.Map;
 
 public class ShoppingCart {
 
-    private Map<GroceryItem,Quantity> itemList;
+    private final Map<GroceryItem,Quantity> itemList= new HashMap<>();
 
-    ShoppingCart()
-    {
-        itemList= new HashMap<>();
-    }
-    public void putItem(GroceryItem item,Quantity quantity)
+    public void add(GroceryItem item, Quantity quantity)
     {
         itemList.put(item,quantity);
     }
 
-    public Map<GroceryItem,Quantity> getItems() {
+    public Map<GroceryItem,Quantity> items() {
         return itemList;
     }
 
